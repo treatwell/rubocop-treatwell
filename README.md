@@ -24,6 +24,21 @@ Or install it yourself as:
 
     $ gem install rubocop-treatwell
 
+## Usage
+
+Add the following to the top of your `.rubocop.yml`:
+
+```yaml
+inherit_gem:
+  rubocop-treatwell: rubocop-treatwell-style.yml
+```
+
+And run:
+
+```bash
+bundle exec rubocop
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies.

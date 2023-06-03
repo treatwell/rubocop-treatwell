@@ -1,0 +1,144 @@
+# This file will inherit from default rubocop config located at
+# https://github.com/rubocop/rubocop/blob/master/config/default.yml
+# and other default config from gems, like rubocop-rails, rubocop-rspec, etc.
+# Some of the default rules are not meant/compatible for monorepo structure
+# especially if you run rubocop on the whole repo, so we need to override them.
+# e.g. default config has a global exclusion list for stuff located in root folder
+#
+# Exclude: Exclude:
+#    - 'node_modules/**/*'
+#    - 'tmp/**/*'
+#
+# This is not appliable for monorepo structure, if you run rubocop from the root
+# folder it will try to analyze stuff in <app>/tmp, while when run in <app> folder
+# it works as intended. We need to tweak include/exclude using better glob patterns
+# (e.g. **/tmp/**/*). Also never use relative paths in Include/Exclude, rules, always use
+# '**/bin/**/*' instead of './bin/**/*' to avoid issues with working directory when runnint it.
+
+require:
+  - rubocop-performance
+  - rubocop-rspec
+  - rubocop-rails
+  - rubocop-treatwell
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - '**/bin/*'
+    - '**/db/schema.rb'
+
+  # Ignore symlinks
+  <% Dir['../**/*'].each do |dir| %>
+    <% next unless File.symlink?(dir) %>
+    - <%= File.directory?(dir) ? "#{dir}/**/*" : dir %>
+  <% end %>
+  SuggestExtensions:
+    rubocop-rake: false
+
+Bundler/OrderedGems:
+  Exclude:
+    - '**/Gemfile'
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: start_of_line
+
+Layout/ExtraSpacing:
+  Exclude:
+    - '**/config/routes.rb'
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/HashAlignment:
+  EnforcedColonStyle:
+    - key
+    - table
+  EnforcedHashRocketStyle:
+    - key
+    - table
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/SpaceBeforeFirstArg:
+  Exclude:
+    - '**/config/routes.rb'
+
+Layout/SpaceInsideParens:
+  EnforcedStyle: no_space
+
+Layout/TrailingEmptyLines:
+  Enabled: true
+
+Lint/AmbiguousBlockAssociation:
+  AllowedMethods:
+    - change
+    - not_change
+    - have_enqueued_job
+    - with
+    - once
+
+Lint/UnusedMethodArgument:
+  AllowUnusedKeywordArguments: true
+
+Metrics/BlockLength:
+  Exclude:
+    - '**/config/routes.rb'
+
+Metrics/MethodLength:
+  Max: 80
+
+Metrics/ParameterLists:
+  Max: 8
+
+Naming/MethodParameterName:
+  AllowedNames: io, id, to, by, on, in, at, ip, db, as
+
+Rails/WhereExists:
+  EnforcedStyle: where
+
+Rails/SkipsModelValidations:
+  Exclude:
+    - '**/db/main/migrate/**/*'
+    - '**/spec/**/*'
+
+RSpec/ExampleLength:
+  Max: 20
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 5
+
+RSpec/StubbedMock:
+  Enabled: false
+
+Style/AsciiComments:
+  AllowedChars:
+    - '€'
+
+Style/FormatStringToken:
+  Exclude:
+    - '**/config/routes.rb'
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
+
+Style/PreferredHashMethods:
+  EnforcedStyle: 'verbose'
+
+Style/RescueStandardError:
+  EnforcedStyle: 'implicit'

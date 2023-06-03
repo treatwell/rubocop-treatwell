@@ -1,12 +1,19 @@
+inherit_from:
+  - rubocop-treatwell-style.yml
+
 AllCops:
   NewCops: enable
 
+# Is not a rails project
+Rails:
+  Enabled: false
+
 Naming/FileName:
  Exclude:
-   - lib/rubocop-uala.rb
+   - lib/rubocop-treatwell.rb
 
 Style/Documentation:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
-    - 'lib/rubocop/uala.rb'
+    - 'lib/rubocop/treatwell.rb'
