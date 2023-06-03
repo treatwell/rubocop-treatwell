@@ -1,0 +1,12 @@
+AllCops:
+  NewCops: enable
+
+Naming/FileName:
+ Exclude:
+   - lib/rubocop-uala.rb
+
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'lib/rubocop/uala.rb'
