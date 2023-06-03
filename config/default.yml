@@ -1,1 +1,5 @@
-# Write it!
+Rails/UnscopedOverNonModelConstant:
+  Description: 'Identifies calls to `unscoped` over non model constants.'
+  Enabled: pending
+  VersionAdded: '0.1.0'
+  AllowedMethods: []
