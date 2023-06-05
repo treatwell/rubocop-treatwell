@@ -24,20 +24,6 @@ require:
   - rubocop-rails
   - rubocop-treatwell
 
-AllCops:
-  NewCops: enable
-  Exclude:
-    - '**/bin/*'
-    - '**/db/schema.rb'
-
-  # Ignore symlinks
-  <% Dir['../**/*'].each do |dir| %>
-    <% next unless File.symlink?(dir) %>
-    - <%= File.directory?(dir) ? "#{dir}/**/*" : dir %>
-  <% end %>
-  SuggestExtensions:
-    rubocop-rake: false
-
 Bundler/OrderedGems:
   Exclude:
     - '**/Gemfile'
