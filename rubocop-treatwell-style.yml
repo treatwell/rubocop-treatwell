@@ -97,6 +97,13 @@ Rails/SkipsModelValidations:
     - '**/db/main/migrate/**/*'
     - '**/spec/**/*'
 
+Rails/UnscopedOverNonModelConstant:
+  Enabled: true
+  AllowedMethods:
+    - class
+    - constantize
+    - klass
+
 RSpec/ExampleLength:
   Max: 20
 
