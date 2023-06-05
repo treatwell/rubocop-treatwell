@@ -6,6 +6,10 @@
 
 </div>
 
+# Introduction
+
+This style guide make use of [Relaxed Ruby Style](https://relaxed.ruby.style/), adding customizations used in Treatwell's Ruby projects.
+
 # Usage
 
 ## Installation

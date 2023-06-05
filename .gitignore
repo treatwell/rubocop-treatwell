@@ -9,3 +9,6 @@
 
 # rspec failure tracking
 .rspec_status
+
+# RuboCop extra files
+.rubocop-https-*
