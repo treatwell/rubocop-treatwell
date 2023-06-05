@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rubocop-treatwell (0.1.0)
+    rubocop-treatwell (0.1.1)
       rubocop (~> 1.50.0)
       rubocop-checkstyle_formatter (~> 0.6.0)
       rubocop-performance (~> 1.17.0)

@@ -26,6 +26,7 @@ module RuboCop
         PATTERN
 
         def on_send(node)
+          return unless node.receiver
           return if node.receiver.respond_to?(:method_name) && _allowed_methods.include?(node.receiver.method_name.to_s)
 
           unscoped_call?(node) do
