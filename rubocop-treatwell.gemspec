@@ -32,9 +32,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # These dependencies are included in all applications
-  spec.add_runtime_dependency 'rubocop', '~> 1.50.0'
-  spec.add_runtime_dependency 'rubocop-checkstyle_formatter', '~> 0.6.0'
-  spec.add_runtime_dependency 'rubocop-performance', '~> 1.17.0'
-  spec.add_runtime_dependency 'rubocop-rails', '~> 2.19.0'
-  spec.add_runtime_dependency 'rubocop-rspec', '~> 2.22.0'
+  spec.add_runtime_dependency 'rubocop', '~> 1.50'
+  spec.add_runtime_dependency 'rubocop-checkstyle_formatter', '~> 0.6'
+  spec.add_runtime_dependency 'rubocop-performance', '~> 1.17'
+  spec.add_runtime_dependency 'rubocop-rails', '~> 2.19'
+  spec.add_runtime_dependency 'rubocop-rspec', '~> 2.22'
 end

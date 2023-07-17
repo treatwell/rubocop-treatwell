@@ -1,12 +1,12 @@
 PATH
   remote: .
   specs:
-    rubocop-treatwell (0.2.0)
-      rubocop (~> 1.50.0)
-      rubocop-checkstyle_formatter (~> 0.6.0)
-      rubocop-performance (~> 1.17.0)
-      rubocop-rails (~> 2.19.0)
-      rubocop-rspec (~> 2.22.0)
+    rubocop-treatwell (0.2.1)
+      rubocop (~> 1.50)
+      rubocop-checkstyle_formatter (~> 0.6)
+      rubocop-performance (~> 1.17)
+      rubocop-rails (~> 2.19)
+      rubocop-rspec (~> 2.22)
 
 GEM
   remote: https://rubygems.org/
