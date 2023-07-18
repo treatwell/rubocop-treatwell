@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Shared style guide for Treatwell Ruby projects"
   spec.description = "Treatwell::RubyStyle provides a set of shared style guide used across all Treatwell Ruby projects"
-  spec.homepage = "https://github.com/treatwell/ruby-style"
+  spec.homepage = "https://github.com/treatwell/rubocop-treatwell"
   spec.required_ruby_version = ">= 2.7.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
