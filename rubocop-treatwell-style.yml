@@ -16,7 +16,7 @@
 # '**/bin/**/*' instead of './bin/**/*' to avoid issues with working directory when runnint it.
 
 inherit_from:
-  - https://relaxed.ruby.style/rubocop.yml
+  - https://raw.githubusercontent.com/janlelis/relaxed.ruby.style/main/.rubocop.yml
 
 require:
   - rubocop-performance
